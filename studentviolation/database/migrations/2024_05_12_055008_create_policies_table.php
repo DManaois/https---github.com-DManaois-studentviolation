@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('policies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            // Add other policy fields as needed
             $table->timestamps();
         });
+        
     }
 
     /**

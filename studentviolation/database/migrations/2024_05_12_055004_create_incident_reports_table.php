@@ -13,8 +13,16 @@ return new class extends Migration
     {
         Schema::create('incident_reports', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->string('reporter_name');
+            $table->date('report_date');
+            $table->text('description')->nullable();
+            // Add other incident report fields as needed
             $table->timestamps();
+        
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
         });
+        
     }
 
     /**

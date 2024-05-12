@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('intervention_programs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->date('start_date');
+            $table->date('end_date');
+            // Add other intervention program fields as needed
             $table->timestamps();
         });
+        
     }
 
     /**
